@@ -84,10 +84,10 @@ BASE_URL (url padrão): http://localhost:3000
 # Comando Para Teste
 
 ```
-npm test
+mocha
 
 
-** Serão feito todos os testes para integração
+** Serão feito todos os testes para integração, atravez do mocha e chai
 ```
 
 
