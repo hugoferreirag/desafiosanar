@@ -2,7 +2,7 @@
 
 
 <h6> Primeiros passos: <br>
-Dentro da raiz do arquivo, criar o arquivo .env, com os dados da conexão do banco de dados, e a chave secreta da mundipag da API, secretKey </h6><br>
+Dentro da raiz do arquivo, criar o arquivo .env, com os dados da conexão do banco de dados, e a chave secreta da mundipag da API, secretKey utilizadas no Basic Auth </h6><br> Opte por usar a Secret Key e não a chave publica, e use a de teste.
 
 # Criar arquivo .env
 ```
