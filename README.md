@@ -5,7 +5,7 @@
 <h5>Sessão: Sem sessão, todos os dados necessários para continuar navegando ou para requisições, são retornados das requisições, para serem salvos pelo front-end no localStorage, Como desenvolvo em Vue sigo este padrão, normalmente dados como ID do usuário logado, Token JWT, e outros dados importantes são capturados e salvos no LocalStorage para serem tratados ao utilizar o serviço. <br>
 No caso do desafio utilizando só o backend, esses dados terão que serem incluidos nas requisições manualmente, como exemplo o token no Header Bearer, Ids nas Urls das requisições, etc.<br>
 <br>
-Extrutura : MVC , contendo Models e controllers, utilizando o framework express. API funcional, e seu fluxo é todo feito atravez de modulação e exportação de funções, middlewares e configurações.<br><br>	
+Estrutura : MVC , contendo Models e controllers, utilizando o framework express. API funcional, e seu fluxo é todo feito atravez de modulação e exportação de funções, middlewares e configurações.<br><br>	
 	
 Base de dados: MySQL, utilizando xampp (tem suporte para Postgress e outras tecnologias, pois é utilizado o Knex, assim podendo criar migrations etc) Optei xampp pela simplicidade. Porem não e utilizado grande estrutura de dados, pois o maior fluxo de dados vem da API externa do mundipagg</h5>
 
