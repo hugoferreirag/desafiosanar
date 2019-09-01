@@ -28,6 +28,8 @@ criar uma base de dados chamada "sanar" <br>
 
 Importar arquivo "sanar.sql" que esta dentro do repositorio do desafio <br>
 
+Importar arquivo "desafio_pronto_sanar.sql" que esta dentro do repositorio do desafio caso queira os dados do desafio já todos inseridos e concluidos <br>
+
 ![sanar_import](https://user-images.githubusercontent.com/50091163/64071349-c8ce7600-cc4e-11e9-9b82-3e7e4297a948.png)
 
 <br>
@@ -59,6 +61,7 @@ BASE_URL (url padrão): http://localhost:3000
     
   /signatures
         .post(Criar nova assinatura)
+	.get(Lista todas as assinaturas, no caso se for importado o desafio pronto, ja ira conter todas assinaturas, coerentes ao desafio)
    
   /account/password/:id
         .put(Atualizar senha)
@@ -93,11 +96,22 @@ mocha
 
 Se a aplicação estiver rodando tudo ok ! podemos começar os testes!!!! <br>
 
+# Utilizando a rota : METHOD "GET" para averiguar desafio pronto !!<br>
+
+
+```
+GET: http://localhost:3000/signatures
+```
+baseado nesses dados, utilizando os IDS fornecidos, podemos consultar planos, cartões, e assinaturas. Podendo tambem cancelar e atualizar os dados.
+
+# Vamos fazer o desafio passo a passo atravez da sql vazia .<br>
 
 aqui estarão descritas as rotas para os testes <br><br>
 <h1>Antes de começar , vamos criar os planos ! </h1>
 
 # Utilizando a rota : METHOD "POST"<br>
+
+
 ```
 POST: http://localhost:3000/plans
 ```
