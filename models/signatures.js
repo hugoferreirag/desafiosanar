@@ -69,7 +69,7 @@ module.exports = app => {
             .catch(err=>res.status(500).send(err))
             
            const mailto = app.models.sendmail.sendEmail(client.email,client.pass)
-           const sucess = `cus_id:${response.body.customer.id} | subscriptions_id: ${response.body.id} | email : ${client.email} | password padrão : sanar123 `
+           const sucess = { cus_id:response.body.customer.id, subscriptions_id: response.body.id, email : client.email ,pass:"sanar123" }
            const error = `Erro ao concluir assinatura, verifique novamente os passos..`
            
           if(mailto === false){
