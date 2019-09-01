@@ -22,7 +22,7 @@ faça o download do xampp:<a href="https://www.apachefriends.org/pt_br/download.
 
  Após a instalação, entre em http: // localhost / phpmyadmin / <br>
 
-criar uma base de dados chamada "sanar" <br>
+Criar uma base de dados chamada "sanar" <br>
 
 ![sanar_basedados](https://user-images.githubusercontent.com/50091163/64071344-b0f6f200-cc4e-11e9-9b7a-e984cf309d45.png)
 
@@ -102,11 +102,11 @@ Se a aplicação estiver rodando tudo ok ! podemos começar os testes!!!! <br>
 ```
 GET: http://localhost:3000/signatures
 ```
-baseado nesses dados, utilizando os IDS fornecidos, podemos consultar planos, cartões, e assinaturas. Podendo tambem cancelar e atualizar os dados.
+Baseado nesses dados, utilizando os IDS fornecidos, podemos consultar planos, cartões, e assinaturas. Podendo tambem cancelar e atualizar os dados.
 
 # Vamos fazer o desafio passo a passo atravez da sql vazia .<br>
 
-aqui estarão descritas as rotas para os testes <br><br>
+Aqui estarão descritas as rotas para os testes <br><br>
 <h1>Antes de começar , vamos criar os planos ! </h1>
 
 # Utilizando a rota : METHOD "POST"<br>
@@ -115,7 +115,7 @@ aqui estarão descritas as rotas para os testes <br><br>
 ```
 POST: http://localhost:3000/plans
 ```
-envie como json no corpo
+Envie como json no corpo
 # plano yellow book
 
 ```
@@ -240,7 +240,7 @@ envie como json no corpo
       ]
     }
 ```
-<h2>tudo certinho ? continuamos para os testes</h2>
+<h2>Tudo certinho ? continuamos para os testes</h2>
 
 <h2>Todas as assinaturas criadas, recebem a senha de acesso no email, no caso do desafio foi criado uma conta no mailtrap, onde todos os email são capturados, segue a imagem de configuranção do envio de emails</h2>
 
