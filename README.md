@@ -1,5 +1,9 @@
 # desafiosanar
 
+<h3>Padrões utilizados:</h3>
+<h5>Authenticação : Jwt, e Basic Auth(API mundipagg)</h5>
+<h5>Sessão: Sem sessão, todos os dados necessários para continuar navegando ou para requisições, são retornados das requisições, para serem salvos pelo front-end no localStorage, Como desenvolvo em Vue sigo este padrão, normalmente dados como ID do usuário logado, Token JWT, e outros dados importantes são capturados e salvos no LocalStorage para serem tratados ao utilizar o serviço. <br>
+No caso do desafio utilizando só o backend, esses dados terão que serem incluidos nas requisições manualmente, como exemplo o token no Header Bearer, Ids nas Urls das requisições, etc.</h5>
 
 <h6> Primeiros passos: <br>
 Dentro da raiz do arquivo, criar o arquivo .env, com os dados da conexão do banco de dados, e a chave secreta da mundipag da API, secretKey utilizadas no Basic Auth </h6><br> Opte por usar a Secret Key e não a chave publica, e use a de teste.
