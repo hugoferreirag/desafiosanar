@@ -34,6 +34,7 @@ Importar arquivo "desafio_pronto_sanar.sql" que esta dentro do repositorio do de
 
 <br>
 
+
 Após tudo feito, abrir projeto na pasta raiz, no visual studio, ou pelo prompt de comando, e se certificar de que o node + npm estão tudo ok, instalados utilizando os comandos "node --version" "npm --version"<br><br>
 
 ![sanar_node](https://user-images.githubusercontent.com/50091163/64071351-dbe14600-cc4e-11e9-80f1-6d852a1adeda.png)
