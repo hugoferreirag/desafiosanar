@@ -1,6 +1,4 @@
 # desafiosanar
-desafio API mundipagg
-<h1>desafio API mundipaggag</h1> <br>
 
 <h6>mundipaggag da API do desafio Primeiros passos: <br>
 Dentro da raiz do arquivo, criar o arquivo .env, com os dados da conexão do banco de dados, e a chave secreta da mundipag da API, secretKey </h6><br>
