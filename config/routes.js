@@ -7,6 +7,7 @@ module.exports = app => {
     
     app.route('/signatures')
         .post(app.controllers.signatures.newSignature)
+        .get(app.controllers.signatures.getAll)
    
     app.route('/account/password/:id')
         .all(app.config.passport.authenticate())

@@ -22,9 +22,14 @@ module.exports = app =>{
         }
         app.models.signatures.newSignature({client, card, product },res)
     }
-  
+    const getAll = async (req,res) => {
+        app.db('assinaturas')
+        .then(result=>{
+            res.status(200).json(result)
+        })
+    }
 
   
     
-    return { newSignature }
+    return { newSignature, getAll }
 }

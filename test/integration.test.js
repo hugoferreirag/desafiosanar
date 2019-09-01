@@ -13,6 +13,44 @@ describe('Signature', () => {
     var cus_id;
     var token;
 
+    it('New plan', (done) => {
+        const plan =
+        {
+
+            "name": "Plano SanarFlix ",
+            "interval": "month",
+            "interval_count": 3,
+            "billing_type": "prepaid",
+            "payment_methods": [
+              "credit_card"
+            ],
+            "installments": [
+              1
+            ],
+            "currency": "BRL",
+      
+            "items": [
+              {
+      
+                "name": "Plan",
+                "quantity": 1,
+                "pricing_scheme": {
+                  "price": 6990,
+                  "scheme_type": "unit"
+                }
+              }
+            ]
+          }
+        chai.request(server)
+            .post('/plans')
+            .send(plan)
+            .end((err,res)=>{
+                res.should.have.status(200)
+                done()    
+            })
+            
+            
+    })
     it('New Signature', (done) => {
         const user =
         {
