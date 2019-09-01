@@ -1,7 +1,7 @@
 module.exports = app =>{
     const { existsOrError, notExistsOrError, equalsOrError } = app.models.validations
     
-    const newPlan = (req,res) =>{
+    const newPlan = async (req,res) =>{
         const plan = req.body
 
         try{
@@ -10,7 +10,7 @@ module.exports = app =>{
         }catch(msg){
             return res.status(400).json(msg)
         }
-        app.models.plans.newPlan(plan,res)
+        await app.models.plans.newPlan(plan,res)
     }
     const getPlan = (req,res) =>{
        app.db('planos')

@@ -34,7 +34,7 @@ module.exports = app => {
             .update(data.info)
             .where({ cus_id: `${data.cus_id}` })
             .then(result => {
-                res.status(200).json('Dados atualizados!')
+               return res.status(200).json('Dados atualizados!')
 
             })
             .catch(err => res.status(500).json(err))
@@ -79,7 +79,7 @@ module.exports = app => {
                 app.db('assinaturas')
                     .update({ card_id: `${response.body.card.id}` })
                     .where({ subs_id: `${data.signature_id}` })
-                    .then(_ => res.status(response.statusCode).json(response.body))
+                    .then(_ => res.status(200).json(response.body))
                     .catch(err => res.status(response.statusCode).json(err))
 
             }
@@ -121,7 +121,7 @@ module.exports = app => {
                 app.db('assinaturas')
                     .update({ canceledAt: new Date(), updatedAt: new Date() })
                     .where({ subs_id: `${data.signature_id}` })
-                    .then(_ => res.status(200).json(response))
+                    .then(_ => res.status(200).json(response.body))
                     .catch(err => res.status(response.statusCode).json(err))
 
             }

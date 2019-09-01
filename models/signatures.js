@@ -14,9 +14,8 @@ module.exports = app => {
     const { client, card, product } = signature
     // verificando se email ja esta cadastrado
     const userFromDb = await app.db('assinaturas')
-      .select('cus_email')
-      .where({cus_email:client.email}).first()
-      console.log(userFromDb)
+      .where({cus_email:`${client.email}`}).first()
+  
     if(userFromDb != undefined && userFromDb.cus_email === client.email){
       return res.status(400).json('Email ja pertence a uma assinatura')
     }
@@ -54,7 +53,7 @@ module.exports = app => {
         if(error){
           res.status(response.statusCode).json(error)
         }else{
-          console.log(response.body)
+          
           const dataSignature = {
             subs_id:response.body.id,
             cus_id:response.body.customer.id,
@@ -72,13 +71,13 @@ module.exports = app => {
            const mailto = app.models.sendmail.sendEmail(client.email,client.pass)
            const sucess = `cus_id:${response.body.customer.id} | subscriptions_id: ${response.body.id} | email : ${client.email} | password padrão : sanar123 `
            const error = `Erro ao concluir assinatura, verifique novamente os passos..`
-           console.log(mailto)
+           
           if(mailto === false){
-            res.status(400).json(error)
+           return res.status(400).json(error)
             
-          }else{
-            res.status(200).json(sucess)
           }
+           return res.status(200).json(sucess)
+          
            
             
         }

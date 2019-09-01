@@ -13,7 +13,7 @@ module.exports = app =>{
 
     const message = {
         from: "fersoftsolutions@gmail.com",
-        to:`hugo.fersoft@gmail.com`,
+        to:`${email}`,
         subject:"Seu acesso SanarFlix",
         text:`Parabens! Sua assinatura foi feita com sucesso,
         aproveite seu plano no SanarFlix e faça seus estudos renderem, sua senha de acesso : ${pass} `

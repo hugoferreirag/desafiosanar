@@ -1,10 +1,10 @@
-const { url, authSecret} = require('../.env')
+const { url, authSecret } = require('../.env')
 const request = require('request')
 module.exports = app => {
 
-    const newPlan =  (plan,res) => {
+    const newPlan = (plan, res) => {
 
-        if(!plan) return res.status(400).json('Plano invalido')
+        if (!plan) return res.status(400).json('Plano invalido')
         var options = {
             method: 'POST',
             uri: url + 'plans',
@@ -16,14 +16,14 @@ module.exports = app => {
 
         };
 
-         request(options, function (error, response, body) {
+        request(options, function (error, response, body) {
             if (error) {
                 res.status(response.statusCode).json(error)
             } else {
 
-                  app.db('planos')
+                app.db('planos')
                     .insert({ plan_id: response.body.id, name: response.body.name })
-                    .then(_ => res.status(200).json(response))
+                    .then(_ => res.status(200).json(response.body))
                     .catch(err => res.status(response.statusCode).json(err))
 
             }
@@ -31,5 +31,5 @@ module.exports = app => {
 
         })
     }
-    return { newPlan}
+    return { newPlan }
 }

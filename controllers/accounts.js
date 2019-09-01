@@ -4,30 +4,29 @@ const passportJwt = require('passport-jwt')
 module.exports = app => {
     const { existsOrError, notExistsOrError, equalsOrError } = app.models.validations
     // informaçoes de cliente
-    const getInfo = (req,res) =>{
-        console.log(req.params.id)
+    const getInfo = (req, res) => {
         const cus_id = req.params.id
-        try{
-            existsOrError(cus_id,"Nenhum assinante setado")
-        }catch(msg){
+        try {
+            existsOrError(cus_id, "Nenhum assinante setado")
+        } catch (msg) {
             return res.status(400).json(msg)
         }
-        app.models.accounts.getInfo(cus_id,res)
+        app.models.accounts.getInfo(cus_id, res)
 
     }
     // atualizar dados perfil
-    const updatePerfil = async (req,res) =>{
+    const updatePerfil = async (req, res) => {
         const info = req.body.info
         const cus_id = req.params.id
-        const data = { info , cus_id}
-        try{
+        const data = { info, cus_id }
+        try {
             existsOrError(info, 'Nenhuma informação enviada')
-            existsOrError(cus_id,'Nenhum cliente setado')
-        }catch(msg){
+            existsOrError(cus_id, 'Nenhum cliente setado')
+        } catch (msg) {
             return res.status(400).json(msg)
         }
-        
-       await  app.models.accounts.updatePerfil(data,res)
+
+        await app.models.accounts.updatePerfil(data, res)
     }
     // Nova senha
     const updatePass = (req, res) => {
@@ -44,29 +43,29 @@ module.exports = app => {
             existsOrError(confirmPass, 'Informe a confirmação da senha atual!')
             equalsOrError(pass, confirmPass, 'Senhas não conferem!')
         } catch (msg) {
-           return  res.status(400).json(msg)
+            return res.status(400).json(msg)
         }
         app.models.accounts.updatePass(data, res)
     }
     // Atualizar cartão
-    const updateCard = (req,res) => {
+    const updateCard = (req, res) => {
         const card = req.body
         const signature_id = req.params.id
-        const data = { card, signature_id}
+        const data = { card, signature_id }
 
         try {
-           
-            existsOrError(card.card.number,'Informe o número do cartão')
-            existsOrError(card.card.cvv,'Informe o número cvv do cartão')
-            existsOrError(card.card.holder_name,'Informe o nome do titular do cartão')
-            existsOrError(card.card.exp_month,'Informe o mes de exp. do cartão')
-            existsOrError(card.card.exp_year,'Informe o ano de exp. do cartão')
+
+            existsOrError(card.card.number, 'Informe o número do cartão')
+            existsOrError(card.card.cvv, 'Informe o número cvv do cartão')
+            existsOrError(card.card.holder_name, 'Informe o nome do titular do cartão')
+            existsOrError(card.card.exp_month, 'Informe o mes de exp. do cartão')
+            existsOrError(card.card.exp_year, 'Informe o ano de exp. do cartão')
         } catch (msg) {
-            return  res.status(400).json(msg)
+            return res.status(400).json(msg)
         }
         app.models.accounts.updateCard(data, res)
     }
-    const cancelSubscription =  (req,res) =>{
+    const cancelSubscription = (req, res) => {
         // informações sobre cancelamento (motivos, periodo da graduação, etc)
         const info = req.body.info
         const client = req.body.client
@@ -74,18 +73,18 @@ module.exports = app => {
         console.log(info)
         const data = { info, client, signature_id }
 
-        try{
-            existsOrError(info,'Preencha as informações')
-            existsOrError(info.graduation_period,'Informe o periodo da sua graduação')
-            existsOrError(info.reason,"Informe o motivo do cancelamento")
-            existsOrError(info.note,"De uma nota para ajudar em nossas pesquisas ")
-            existsOrError(client.email,'Informe o email para cancelamento')
-            existsOrError(client.pass,'Informe a senha para cancelamento')
-            
-        }catch(msg){
+        try {
+            existsOrError(info, 'Preencha as informações')
+            existsOrError(info.graduation_period, 'Informe o periodo da sua graduação')
+            existsOrError(info.reason, "Informe o motivo do cancelamento")
+            existsOrError(info.note, "De uma nota para ajudar em nossas pesquisas ")
+            existsOrError(client.email, 'Informe o email para cancelamento')
+            existsOrError(client.pass, 'Informe a senha para cancelamento')
+
+        } catch (msg) {
             return res.status(400).json(msg)
         }
-          app.models.accounts.cancelSubscription(data,res)
+        app.models.accounts.cancelSubscription(data, res)
     }
 
     return { updatePass, updateCard, cancelSubscription, updatePerfil, getInfo }
