@@ -248,7 +248,7 @@ Envie como json no corpo
 
 <h1>Teste 1</h1><br>
 <h2>Mario é um novo assinante da sanar flix</h2>:<br>
-<h5>Para efetuar o teste, podemos instalar o postman segue o link : link <br>
+<h5>Para efetuar o teste, podemos instalar o postman segue o link : https://www.getpostman.com/downloads/ <br>
 No postman, selecionar o metodo POST, e designar a rota descrita na aplicação para adicionar uma nova assinatura<br>
 
 # Rota de nova assinatura : METHOD "POST"
